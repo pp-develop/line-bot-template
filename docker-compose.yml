@@ -1,0 +1,38 @@
+version: '3.9'
+
+services:
+  php:
+    image: php:v1
+    build: ./dockerfile/php
+    container_name: line_bot_php
+    volumes:
+      - ./dockerfile/php/php.ini:/usr/local/etc/php/php.ini
+      - ./src:/var/www/html
+    ports:
+      - 80:80
+
+  mysql:
+    image: mysql:8.0
+    container_name: line_bot_mysql
+    volumes:
+      - ./mysql:/var/lib/mysql
+    ports:
+      - 3306:3306
+    env_file:
+      - ./src/app/.env
+      
+  ngrok:
+    image: wernight/ngrok:latest
+    ports:
+      - 4040:4040
+    environment:
+      NGROK_PROTOCOL: http
+      NGROK_PORT: php:80
+    depends_on:
+      - php
+    env_file:
+      - ./src/app/.env
+
+networks:
+  default:
+    name: line_bot
