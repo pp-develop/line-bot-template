@@ -3,7 +3,7 @@
 ## Setup
 ### LINE
 Get Messaging API `CHANNEL_ACCESS_TOKEN / CHANNEL_SECRET` from [LINE Developers](
-https://developers.line.biz/ja/docs/messaging-api/getting-started/)  
+https://developers.line.biz/en/docs/messaging-api/getting-started/)  
 ```
 # .env
 LINE_CHANNEL_ACCESS_TOKEN=""
