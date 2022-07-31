@@ -10,16 +10,6 @@ services:
       - ./src:/var/www/html
     ports:
       - 80:80
-
-  mysql:
-    image: mysql:8.0
-    container_name: line_bot_mysql
-    volumes:
-      - ./mysql:/var/lib/mysql
-    ports:
-      - 3306:3306
-    env_file:
-      - ./src/app/.env
       
   ngrok:
     image: wernight/ngrok:latest
