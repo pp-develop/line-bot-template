@@ -18,6 +18,7 @@ services:
     environment:
       NGROK_PROTOCOL: http
       NGROK_PORT: php:80
+      NGROK_AUTH: NGROK_AUTH
     depends_on:
       - php
     env_file:
