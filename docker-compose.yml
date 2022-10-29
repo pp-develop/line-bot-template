@@ -2,8 +2,7 @@ version: '3.9'
 
 services:
   php:
-    image: php:v1
-    build: ./dockerfile/php
+    image: php:8.1-apache
     container_name: line_bot_php
     ports:
       - 80:80
@@ -18,8 +17,6 @@ services:
     environment:
       NGROK_PROTOCOL: http
       NGROK_PORT: php:80
-      NGROK_AUTH: NGROK_AUTH
+      NGROK_AUTH: AUTH_TOKEN
     depends_on:
       - php
-    env_file:
-      - .env
