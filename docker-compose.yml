@@ -7,7 +7,6 @@ services:
     ports:
       - 80:80
     volumes:
-      - ./dockerfile/php/php.ini:/usr/local/etc/php/php.ini
       - ./src:/var/www/html
       
   ngrok:
