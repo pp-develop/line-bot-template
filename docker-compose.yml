@@ -5,11 +5,11 @@ services:
     image: php:v1
     build: ./dockerfile/php
     container_name: line_bot_php
+    ports:
+      - 80:80
     volumes:
       - ./dockerfile/php/php.ini:/usr/local/etc/php/php.ini
       - ./src:/var/www/html
-    ports:
-      - 80:80
       
   ngrok:
     image: wernight/ngrok:latest
@@ -21,8 +21,4 @@ services:
     depends_on:
       - php
     env_file:
-      - ./src/app/.env
-
-networks:
-  default:
-    name: line_bot
+      - .env

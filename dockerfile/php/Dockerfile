@@ -1,10 +1,4 @@
-FROM php:8.0-apache
-
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
-
-RUN apt-get update \
-    && apt-get install -y libonig-dev git zip unzip \
-    && docker-php-ext-install mbstring sockets
+FROM php:8.1-apache
 
 RUN pecl install xdebug \
     && docker-php-ext-enable xdebug
