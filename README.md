@@ -1,4 +1,4 @@
-# docker-line-bot-template
+# line-bot-template
 
 ## Setup
 ### LINE
