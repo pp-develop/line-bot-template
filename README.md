@@ -1,5 +1,10 @@
 # line-bot-template
 
+[ English | [日本語](https://github.com/pp-develop/line-bot-template/blob/main/README.ja.md) ]
+
+## Overview
+This repository is a template for developing LINE BOT using LINE Messaging API. It sets up a PHP development environment using Docker. 
+
 ## Setup
 ### LINE
 Get Messaging API `CHANNEL_ACCESS_TOKEN / CHANNEL_SECRET` from [LINE Developers](
