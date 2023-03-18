@@ -1,10 +1,16 @@
 # line-bot-template
 
+## Overview
+このリポジトリは、LINE Messaging APIを使用してLINE BOTを開発するためのテンプレートです。Dockerを使用してPHPの開発環境をセットアップします。　　環境構築には以下が必要です。  
+・Dockerの動作環境  
+・LINE Developersのアカウント  
+・ngrokのアカウント  
+
 ## Setup
 ### LINE
 1. [LINE Developers](
-https://developers.line.biz/en/docs/messaging-api/getting-started/) から、Messaging APIの`CHANNEL_ACCESS_TOKEN / CHANNEL_SECRET`を取得してください。
-2. /src/index.phpの下記の値を、先ほど取得した値に置き換えます。
+https://developers.line.biz/ja/docs/messaging-api/getting-started/) から、Messaging APIの`CHANNEL_ACCESS_TOKEN / CHANNEL_SECRET`を取得してください。
+2. /src/index.phpの下記の値を、先程取得した値に置き換えます。
     ```
     # /src/index.php
     $channelAccessToken = '<your channel access token>';
@@ -15,7 +21,7 @@ https://developers.line.biz/en/docs/messaging-api/getting-started/) から、Mes
 サーバーを公開し、LINE Messaging APIのWebhook URLを設定してください。
 
 #### ngrokを使用する場合
-1. AUTH_TOKENを取得するため、ngrokの[Dashboard](https://dashboard.ngrok.com/get-started/your-authtoken)にアクセスするか、アカウントがない場合は[アカウントを作成
+1. Authtokenを取得するため、ngrokの[Dashboard](https://dashboard.ngrok.com/get-started/your-authtoken)にアクセスするか、アカウントがない場合は[アカウントを作成
 ](https://dashboard.ngrok.com/signup)してください。
 2. docker-compose.ymlのNGROK_AUTHの値を、先程取得した値に置き換えます。
     ```
