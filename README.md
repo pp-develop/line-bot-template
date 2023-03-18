@@ -3,7 +3,11 @@
 [ English | [日本語](https://github.com/pp-develop/line-bot-template/blob/main/README.ja.md) ]
 
 ## Overview
-This repository is a template for developing LINE BOT using LINE Messaging API. It sets up a PHP development environment using Docker. 
+This repository is a template for developing LINE BOT using LINE Messaging API. It sets up a PHP development environment using Docker.  
+The following are required for environment setup:  
+・Docker environment  
+・LINE Developers account  
+・ngrok account
 
 ## Setup
 ### LINE
