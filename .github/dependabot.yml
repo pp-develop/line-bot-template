@@ -5,7 +5,12 @@
 
 version: 2
 updates:
-  - package-ecosystem: "composer" # See documentation for possible values
-    directory: "/src" # Location of package manifests
+  - package-ecosystem: "docker" # See documentation for possible values
+    directory: "/docker/php" # Location of package manifests
+    schedule:
+      interval: "daily"
+
+  - package-ecosystem: "docker" # See documentation for possible values
+    directory: "/docker/ngrok" # Location of package manifests
     schedule:
       interval: "daily"
