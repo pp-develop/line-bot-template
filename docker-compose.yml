@@ -2,20 +2,24 @@ version: '3.9'
 
 services:
   php:
-    image: php:8.1-apache
-    container_name: line_bot_php
+    build:
+      context: ./docker/php
+      dockerfile: Dockerfile
+    container_name: line_bot_phpl
     ports:
       - 80:80
     volumes:
       - ./src:/var/www/html
 
   ngrok:
-    image: wernight/ngrok:latest
+    build:
+      context: ./docker/ngrok
+      dockerfile: Dockerfile
+    restart: unless-stopped
     ports:
       - 4040:4040
+    command: ["http", "php:80"]
     environment:
-      NGROK_PROTOCOL: http
-      NGROK_PORT: php:80
-      NGROK_AUTH: AUTH_TOKEN
+      NGROK_AUTHTOKEN: AUTH_TOKEN
     depends_on:
       - php
